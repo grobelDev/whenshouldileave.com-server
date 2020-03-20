@@ -4,6 +4,8 @@ API inputs:
 
 -  `/` - the main request handler that returns directions from two different valid locations with a time value.
 
+![whenshouldileave.com](https://cdn.discordapp.com/attachments/636565266356240394/690388170369400863/screenshot.png)
+![whenshouldileave.com](https://cdn.discordapp.com/attachments/636565266356240394/690388099515154512/screenshot.png)
 ![whenshouldileave.com](https://cdn.discordapp.com/attachments/636565266356240394/690384886271311892/screenshot.png)
 
 ## About
@@ -19,4 +21,13 @@ Driving is better with the road to yourself.
 
 ## Technology
 
-> Tech Used: React, Nodejs, Postgres, Google Cloud Run, Google Cloud Build
+## Tech Stack
+
+-  React
+-  Node.js
+-  Express.js
+-  Postgres
+-  Docker
+-  Google Cloud
+-  Google Cloud Build
+-  Google Cloud Run
