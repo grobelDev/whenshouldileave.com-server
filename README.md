@@ -1,7 +1,5 @@
 # https://whenshouldileave.com
 
-You can find it at: https://whenshouldileave.com
-
 API inputs:
 
 -  `/` - the main request handler that returns directions from two different valid locations with a time value.
