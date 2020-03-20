@@ -3,13 +3,7 @@ steps:
    # - name: 'gcr.io/cloud-builders/docker'
    #   args: ['build', '-t', 'gcr.io/$PROJECT_ID/whenshouldileave', './client']
    - name: "gcr.io/cloud-builders/docker"
-     args:
-        [
-           "build",
-           "-t",
-           "gcr.io/$PROJECT_ID/whenshouldileave-server",
-           "./server",
-        ]
+     args: ["build", "-t", "gcr.io/$PROJECT_ID/whenshouldileave-server", "./"]
 
    # push the container images to Container Registry
    # - name: 'gcr.io/cloud-builders/docker'
