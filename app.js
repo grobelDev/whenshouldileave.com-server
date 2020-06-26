@@ -9,15 +9,17 @@ const app = express();
 
 let env = process.env.NODE_ENV || 'development';
 
-if (env === 'development') {
-  app.use(cors());
-} else {
-  let corsOptions = {
-    origin: 'https://client-gmhtsvfjha-uc.a.run.app',
-    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-  };
-  app.use(cors(corsOptions));
-}
+app.use(cors());
+
+// if (env === 'development') {
+//   app.use(cors());
+// } else {
+//   let corsOptions = {
+//     origin: 'https://client-gmhtsvfjha-uc.a.run.app',
+//     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+//   };
+//   app.use(cors(corsOptions));
+// }
 
 // // [START cloud_sql_postgres_knex_create]
 // // Initialize Knex, a Node.js SQL query builder library with built-in connection pooling.
@@ -132,15 +134,12 @@ app.get('/', async (req, res) => {
 
     if (startingPoint === 'undefined' || destination === 'undefined') {
       console.log('invalid inputs');
-      return res
-        .status(400)
-        .send('Invalid Directions')
-        .end();
+      return res.status(400).send('Invalid Directions').end();
     }
 
     let newDirections = {
       startingpoint: startingPoint,
-      destination: destination
+      destination: destination,
     };
 
     // try {
@@ -154,7 +153,7 @@ app.get('/', async (req, res) => {
     //   return;
     // }
     let response = await results.getResults(req);
-    let sanitizedResponse = response.map(direction => {
+    let sanitizedResponse = response.map((direction) => {
       let newDirection = direction;
       delete newDirection['requestUrl'];
       delete newDirection['query'].key;
